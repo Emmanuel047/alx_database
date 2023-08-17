@@ -1,5 +1,4 @@
 -- Cities by states
-SELECT CONCAT(cities.id, ' - ', cities.name, ' - ', states.name) AS city_info
-FROM cities, states
-WHERE cities.state_id = states.id
-ORDER BY cities.id ASC;
+SELECT cities.id, cities.name, states.name
+FROM cities, LEFT JOIN states ON state.id = cities.state.id
+ORDER BY cities.id;
